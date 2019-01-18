@@ -1,0 +1,28 @@
+
+#time{
+	position: absolute;
+	font-size: 55px;
+	font-weight: 700;
+	text-shadow: 4px 3px gray;
+	height: 20%;
+	left: 87%;
+	top: 1%;
+}
+
+#backgrond{
+	position: absolute;
+	background-color: #F3F0B6;
+}
+
+#downTitles{
+	position: absolute;
+	font-size: 30px;
+	font-weight: 400;
+	height: 8%;
+	width: 20%;
+	left: 10%;
+	top: 20%;
+	background-color: yellow;
+	text-align: center;
+	line-height: 230%;
+}
