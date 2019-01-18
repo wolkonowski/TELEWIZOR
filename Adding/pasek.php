@@ -5,9 +5,9 @@
 </head>
 <body>
 
-<div id="background"> </div>
+<div id="background"> 
 
-<div id="downTitles"> Ogloszenia na dole ekranu </div>
+<div id="downTitles"> Pasek wiadomosci </div>
 
 <div id="time"> </div>
 
@@ -29,7 +29,7 @@ function zegar(){
 }
 zegar();
 </script>
-
+</div>
 
 </body>
 </html>
