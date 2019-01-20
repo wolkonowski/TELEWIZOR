@@ -11,7 +11,7 @@
 
 #background{
 	position: absolute;
-	background-color: #F3F0B6;
+	background-color: #f2f2f2;
 	left: 0%;
 	top: 0%;
 	width: 100%;
@@ -34,6 +34,79 @@
 	line-height: 280%;
 	outline:none;
 }
+
+#add{
+	position: absolute;
+	font-size: 30px;
+	font-weight: 700;
+	color: black;
+	height: 40%;
+	width: 30%;
+	left: 10%;
+	top: 20%;
+	border-radius: 15px;
+	outline:none;
+}
+
+#post1{
+	position: absolute;
+	font-size: 20px;
+	font-weight: 400;
+	color: black;
+	height: 20%;
+	width: 80%;
+	left: 5%;
+	top: 60%;
+}
+
+#post2 {
+
+	background-color: #F3F0B6;
+	color: black;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+    height: 20%;
+	width: 8%;
+	left: 88%;
+	top: 60%;
+  
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #3397ef;
+  color: white;
+  padding: 14px 20px;
+  margin: 2px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0081f3;
+}
+
+#lab {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
 
 #downTitles:hover{
 	background-color: #7c25e5;

@@ -7,29 +7,37 @@
 
 <div id="background"> 
 
-<div id="downTitles"> Pasek wiadomosci </div>
-
 <div id="time"> </div>
 
-<script type="text/javascript">
-function zegar(){
-    
-    now = new Date();
-    var hours = now.getHours();
-    var min = now.getMinutes();
-    var sec = now.getSeconds();
-    
-    if (hours < 10) hours = "0" + hours;
-    if (min < 10) min = "0" + min;
-    if (sec < 10) sec = "0" + sec;
-    
-    document.getElementById('time').innerHTML = hours + ":" + min + ":" + sec;
-        
-    setTimeout("zegar()", 1000);
+<?php
+
+
+if (isset($_POST['add'])) {
+	echo "abc";
 }
-zegar();
-</script>
+?>
+
+
+
+
+<div id="add">
+
+
+<div id="lab">
+<form action="" method="POST">
+    <label> Dodaj ogloszenie: </label>
+    <input type="text" id='value1' name="value" autocomplete="off" placeholder="Tutaj wpisz tekst...">
+  
+    <input type="submit" onclick="javascript:submit1()" name="add" value="OK">
+
+</form>
 </div>
 
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
