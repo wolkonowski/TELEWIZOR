@@ -1,6 +1,6 @@
 
 var czas = 0;
-var speed = 7;
+var speed = 6;
 
 	
 function start(){
