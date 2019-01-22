@@ -35,6 +35,7 @@ function animacja1(){
 		}
 		else if(!is && document.getElementById("pasek1").offsetWidth <= -1 * document.getElementById("pasek1").offsetLeft){
 			clearInterval(id);
+			elem.style.left = "100%";
 		} else {
 			pos-=speed/100; 
 			elem.style.left = pos + "%"; 
@@ -44,23 +45,24 @@ function animacja1(){
 }
 
 function animacja2(){
-	var elem = document.getElementById("pasek2");   
-	var pos = 100;
-	var id = setInterval(frame, 10);
+	var elem2 = document.getElementById("pasek2");   
+	var pos2 = 100;
+	var id2 = setInterval(frame, 10);
 
-	var is = true;
+	var is2 = true;
 	
 	
 	function frame() {
-		if (is && document.getElementById("pasek2").offsetWidth <= document.getElementById("blok").offsetWidth - document.getElementById("pasek2") .offsetLeft - 7) {
+		if (is2 && document.getElementById("pasek2").offsetWidth <= document.getElementById("blok").offsetWidth - document.getElementById("pasek2") .offsetLeft - 7) {
 			animacja1();
-			is = false;
+			is2 = false;
 		}
-		else if(!is && document.getElementById("pasek2").offsetWidth <= -1 * document.getElementById("pasek2").offsetLeft){
-			clearInterval(id);
+		else if(!is2 && document.getElementById("pasek2").offsetWidth <= -1 * document.getElementById("pasek2").offsetLeft){
+			clearInterval(id2);
+			elem2.style.left = "100%";
 		} else {
-			pos-=speed/100; 
-			elem.style.left = pos + "%"; 
+			pos2-=speed/100; 
+			elem2.style.left = pos2 + "%"; 
 		}
 	}
 
