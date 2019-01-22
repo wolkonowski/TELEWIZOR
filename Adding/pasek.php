@@ -39,6 +39,9 @@ Lista aktywnych ogloszen:
 <div id="end"> __ </div>
 </div>
 
+<div id="add2">
+	<input type="submit" id="inputSubmit" onclick="javascript:send()" value="Zaktualizuj pasek ogloszen">
+</div>
 
 </div>
 

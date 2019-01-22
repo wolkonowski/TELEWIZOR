@@ -148,11 +148,44 @@ input[type=submit]:hover {
 	word-spacing: 5px;
 }
 
+#oglosz {
+	position: absolute;
+	background-color: red;
+	top: 5%;
+	right: -11%;
+	width: 5%;
+	height: 90%;
+}
+
 #end {
 	position: absolute;
 	bottom: 0;
 	height: 30px;
 	color: #f2f2f2;
+}
+
+#add2{
+	position: absolute;
+	font-size: 30px;
+	font-weight: 700;
+	color: black;
+	height: 40%;
+	width: 30%;
+	left: 10%;
+	top: 50%;
+	border-radius: 15px;
+	outline:none;
+}
+
+#inputSubmit{
+	position: absolute;
+	height: 30%;
+	left: 10%;
+	top: 40%;
+	width: 80%;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 150%;
 }
 
 #downTitles:hover{

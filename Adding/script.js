@@ -12,11 +12,58 @@ function emptyError(){
 	
 }
 
+function send(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+				alert("Ogloszenia zostaly zauktualizowane!");
+		}
+    };
+	xhttp.open("POST", window.location.pathname.replace("/Adding", "").replace("pasek.php", "strona.php"), true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("sendMain=true");
+}
+
 function create(item, index){
-	list = list + "<div> " + item + "</div>"; 
+	if(item != '') list = list + "<div> " + item + " <div id ='oglosz' unselectable='on' onclick='javascript:remove(" +index+ ")' > </div> </div>"; 
+}
+
+function remove(i){
+	var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			var x =xhttp.responseText.split("\n");
+			x.splice(i, 1);
+			rem(x);
+		}
+    };
+		xhttp.open("POST", "PHP.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("getOGL=OK");
+}
+
+function rem(txt){
+	
+	if(txt != '') spliit = '' + txt[0];
+	else spliit = '';
+	txt.splice(0, 1);
+	txt.forEach(spl2);
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			start();
+		}
+    };
+	xhttp.open("POST", "PHP.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("sendOGL=" + spliit);
 }
 
 function start(){
+	
+
+    var url = window.location.pathname;
 	list = '';
 	var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() { 
@@ -65,12 +112,16 @@ function add(txt, aaa){
 		}
     };
 	xhttp.open("POST", "PHP.php", true);
-		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("sendOGL=" + spliit);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("sendOGL=" + spliit);
 }
 
 function spl(item, index){
 	spliit = spliit + item + "\n";
+}
+
+function spl2(item, index){
+	spliit = spliit + "\n" +item;
 }
 
 function zegar(){

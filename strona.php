@@ -14,7 +14,7 @@
 
 <div id="pasek"> </div>
 
-<div id="pasek2"> </div>
+<div id = "blok"> <div id="pasek1"> </div> <div id="pasek2"> </div> </div>
 
 <div id="czas"> </div>
 
@@ -35,6 +35,7 @@ function zegar(){
     setTimeout("zegar()", 1000);
 }
 zegar();
+start();
 </script>
 
 
