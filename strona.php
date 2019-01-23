@@ -18,6 +18,14 @@
 
 <div id="czas"> </div>
 
+<?php
+
+if(isset($_POST['sendMain'])){
+	header("Refresh:0");
+}
+
+?>
+
 <script type="text/javascript">
 function zegar(){
     
