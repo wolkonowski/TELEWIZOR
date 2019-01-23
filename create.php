@@ -1,6 +1,5 @@
 <?php
-if (isset($_POST['create'])&&!empty($_POST['create']))
-{
+
     include "connect.php";
     $sql = "CREATE DATABASE ".$dbname." 
    DEFAULT CHARACTER SET utf8
@@ -25,6 +24,6 @@ pass varchar(255) NOT NULL
         echo "Error creating table: " . $conn->error;
         echo "<br>";
     }
-}
+
 
 ?>

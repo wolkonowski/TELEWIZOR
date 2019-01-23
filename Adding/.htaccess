@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine On
+    RewriteCond %{HTTP_COOKIE} !loggedin=true;? [NC]
+    RewriteRule ^ /login.php [R,L]
