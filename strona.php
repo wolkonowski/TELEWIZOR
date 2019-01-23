@@ -1,3 +1,4 @@
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -5,7 +6,23 @@
 </head>
 <body>
 <script type="text/javascript" src="script.js"></script>
+<script type='text/javascript'>
 
+    (function()
+    {
+        if( window.localStorage )
+        {
+            if( !localStorage.getItem('firstLoad') )
+            {
+                localStorage['firstLoad'] = true;
+                window.location.reload();
+            }
+            else
+                localStorage.removeItem('firstLoad');
+        }
+    })();
+
+</script>
 <div id="obwodka"> </div>
 
 <div id="tlo1"> </div>
@@ -37,7 +54,6 @@ function zegar(){
 zegar();
 start();
 </script>
-
 
 </body>
 </html>
