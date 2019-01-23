@@ -3,6 +3,7 @@ var czas = 0;
 var ogloszenia;
 var list;
 var spliit;
+var spliit2;
 
 start();
 
@@ -44,8 +45,8 @@ function remove(i){
 
 function rem(txt){
 	
-	if(txt != '') spliit = '' + txt[0];
-	else spliit = '';
+	if(txt != '') spliit2 = '' + txt[0];
+	else spliit2 = '';
 	txt.splice(0, 1);
 	txt.forEach(spl2);
 
@@ -57,7 +58,7 @@ function rem(txt){
     };
 	xhttp.open("POST", "PHP.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("sendOGL=" + spliit);
+	xhttp.send("sendOGL=" + spliit2);
 }
 
 function start(){
@@ -121,7 +122,7 @@ function spl(item, index){
 }
 
 function spl2(item, index){
-	spliit = spliit + "\n" +item;
+	spliit2 = spliit2 + "\n" +item;
 }
 
 function zegar(){
