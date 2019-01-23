@@ -9,9 +9,14 @@ function start(){
 		if(xhttp.readyState == 4 && xhttp.status == 200) { 
 			var x = xhttp.responseText;
 			while(x.includes("\n")) x = x.replace("\n", " ● ");
-			document.getElementById("pasek2").innerHTML = " " + x + " ● ";
-			document.getElementById("pasek1").innerHTML = " " + x + " ● ";
-			animacja2();
+			if(x != '' && x != ' '){
+				var h = x;
+				document.getElementById("pasek2").innerHTML = h;
+				while(document.getElementById("pasek2").offsetWidth <= document.getElementById("blok").offsetWidth){ h = h + h; document.getElementById("pasek2").innerHTML = h;}
+				document.getElementById("pasek1").innerHTML = h;
+				animacja2();
+			}
+			
 		}
     };
 	xhttp.open("POST", "Adding/PHP.php", true);
