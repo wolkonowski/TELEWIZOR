@@ -1,7 +1,4 @@
-Jakies ciekawe wiadomosci.
-Jeszcze ciekawsze wiadomosci.
-Bardzo ciekawe wiadomosci.
-Jakis ciekawy tekst.
-Cos bardzo ciekawego.
-Ciekawy swiata.
-Bardzo ciekawy.
+
+Jakis bardzo ciekawy tekst.
+Bardzo ciekawe ogloszenie.
+Jest ono ciekawe.
