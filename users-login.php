@@ -16,7 +16,7 @@ if(isset($_POST['username'])&&!empty($_POST['username'])&&!empty($_POST['psw']))
 {
     $username=$_POST['username'];
     $ps=md5($_POST['psw']);
-    $sql="SELECT pass from users WHERE username='$username';";
+    $sql=sprintf("SELECT pass from users WHERE username='%s';",mysqli_real_escape_string($conn,$username));
     $result = $conn->query($sql);
     if ($result->num_rows == 0){echo "Użytkownik nie istnieje"; exit();}
     $row = $result->fetch_assoc();
@@ -27,6 +27,8 @@ if(isset($_POST['username'])&&!empty($_POST['username'])&&!empty($_POST['psw']))
        //start();
     session_start();
         $_SESSION['login_string']=md5($username.$time.$_SERVER['HTTP_USER_AGENT'].$row['pass']);
+        $sql=sprintf("UPDATE users SET sess='%s' WHERE username='%s';",md5($username.$time.$_SERVER['HTTP_USER_AGENT'].$row['pass']),mysqli_real_escape_string($conn,$username));
+        $result=$conn->query($sql);
         header("Location: strona.php");
 //echo session_id();
 

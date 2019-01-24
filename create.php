@@ -15,7 +15,8 @@
     $sql="CREATE TABLE users(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username varchar(255) UNIQUE NOT NULL,
-pass varchar(255) NOT NULL
+pass varchar(255) NOT NULL,
+sess varchar(255)
 )";
     if ($conn->query($sql) === TRUE) {
         echo "Table created successfully";

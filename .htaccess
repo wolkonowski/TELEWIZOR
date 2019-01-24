@@ -1,4 +1,4 @@
 Options +FollowSymLinks
 RewriteEngine On
     RewriteCond %{HTTP_COOKIE} !loggedin=true;? [NC]
-    RewriteRule ^(.*)\.(png|jpg)([^.]*)$ /login.php [R,L]
+    RewriteRule ^(.*)\.(mp4|mp3)([^.]*)$ /login.php [R,L]
