@@ -6,6 +6,7 @@
 </head>
 <body>
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="jQuery.js"></script>
 <script type='text/javascript'>
 
     (function()
@@ -34,6 +35,22 @@
 <div id = "blok"> <div id="pasek1"> </div> <div id="pasek2"> </div> </div>
 
 <div id="czas"> </div>
+
+<div id="foto"> 
+</div>
+<?php
+	$path = "foto";    
+	$d = dir($path);
+	$suma = 0;
+	while (false !== ($entry = $d->read())) {
+		$filepath = "{$path}/{$entry}";
+		if(is_file($filepath)) {
+			$suma++;
+			echo "<div id='foto$suma' style='position: absolute; top: -1000px;'>".$entry."</div>";	
+		}
+	}
+	echo "<div id='iloscfoto' style='position: absolute; top: -1000px;'>".$suma."</div>";
+?>
 
 <?php
 
