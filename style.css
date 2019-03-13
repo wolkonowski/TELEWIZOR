@@ -8,6 +8,7 @@ padding: 0;
 	background-image: url(tło.png);
 	height: 100%;
 	width: 100%;
+	
 }
 
 #tlo1{
@@ -18,6 +19,7 @@ padding: 0;
 	height: 95%;
 	width: 97%;
 	border-top-right-radius: 35% 20%;
+	
 
 }
 
@@ -32,6 +34,7 @@ padding: 0;
 	width: 90%;
 	height: 80%;
 	opacity: 0.1;
+	
 }
 
 #pasek{
@@ -45,6 +48,7 @@ padding: 0;
 	top: 82%;
 	width: 60%;
 	height: 13%;
+
 }
 
 #blok {
@@ -60,6 +64,7 @@ padding: 0;
 	top: 95%;
 	width: 97%;
 	height: 5%;
+	
       }
 
 #pasek1{
@@ -95,4 +100,13 @@ padding: 0;
 	height: 20%;
 	left: 87%;
 	top: 1%;
+	
+}
+#foto{
+	position: absolute;
+	background-position: center;
+	width: 50%;
+	height: 50%;
+	background-color:black;
+	
 }
