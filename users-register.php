@@ -2,8 +2,9 @@
 include "connect.php";
 if(isset($_POST['username'])&&!empty($_POST['username'])&&!empty($_POST['psw']))
 {
-    $ps=md5($_POST['psw']);
-    $sql="insert into users(username, pass) VALUES ('".$_POST['username']."', '".$ps."');";
+    $ps=hash("sha256",$_POST['psw']);
+    $username=$_POST['username'];
+    $sql=sprintf("insert into users(username, pass) VALUES ('%s', '%s');",mysqli_real_escape_string($conn,$username),$ps);
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
