@@ -1,7 +1,7 @@
 
 var czas = 0;
 var speed = 6;
-
+var id, id2;
 	
 function start(){
 	var xhttp = new XMLHttpRequest();
@@ -16,19 +16,29 @@ function start(){
 				document.getElementById("pasek1").innerHTML = h;
 				animacja2();
 			}
+			else{
+				document.getElementById("blok").style.opacity = "0";
+			}
 			
 		}
     };
 	xhttp.open("POST", "Adding/PHP.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("getOGL=OK");
+	
+
 }
 
+function restart(){
+	clearInterval(id2);
+	clearInterval(id);
+	start();
+}
 
 function animacja1(){
 	var elem = document.getElementById("pasek1");   
 	var pos = 100;
-	var id = setInterval(frame, 10);
+	id = setInterval(frame, 10);
 
 	var is = true;
 	
@@ -52,7 +62,7 @@ function animacja1(){
 function animacja2(){
 	var elem2 = document.getElementById("pasek2");   
 	var pos2 = 100;
-	var id2 = setInterval(frame, 10);
+	id2 = setInterval(frame, 10);
 
 	var is2 = true;
 	

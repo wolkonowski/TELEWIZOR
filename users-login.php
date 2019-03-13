@@ -30,8 +30,6 @@ if(isset($_POST['username'])&&!empty($_POST['username'])&&!empty($_POST['psw']))
         $sql=sprintf("UPDATE users SET sess='%s' WHERE username='%s';",hash("sha256",($username.$time.$_SERVER['HTTP_USER_AGENT'].$row['pass'])),mysqli_real_escape_string($conn,$username));
         $result=$conn->query($sql);
         header("Location: strona.php");
-//echo session_id();
-
 
 }
 ?>

@@ -37,8 +37,8 @@
 
 <?php
 
-if(isset($_POST['sendMain'])){
-	header("Refresh:0");
+if(isset($POST['sendMain'])){
+
 }
 
 ?>
@@ -61,6 +61,22 @@ function zegar(){
 }
 zegar();
 start();
+
+window.setInterval(function(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+		if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			var x = this.responseText;
+			if(x == "YES") restart();
+			
+		}
+    };
+	xhttp.open("POST", "Adding/checkPasek.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("check=OK");
+	
+}, 2000);
+
 </script>
 
 </body>
