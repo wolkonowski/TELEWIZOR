@@ -17,7 +17,7 @@ if (isset($_POST['submit']))
 	
     if (in_array($fileActualExt, $allowed))
 	{   if($fileError === 0)
-	{   if($fileSize < 1000000)
+	{   if($fileSize < 1000000000000000)
 	{   $fileNameNew = uniqid('', true).".".
            $fileActualExt;
         $fileDestination = 'foto/'. $fileNameNew;
