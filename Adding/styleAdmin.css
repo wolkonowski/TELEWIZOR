@@ -14,7 +14,7 @@ body {
 }
 
 
-#downTitles{
+#downTitles >a{
 	position: absolute;
 	font-size: 30px;
 	font-weight: 700;
@@ -23,11 +23,13 @@ body {
 	width: 20%;
 	left: 10%;
 	top: 20%;
+	margin-top: 20px;
 	background-color: #252ee5;
 	border-radius: 15px;
 	text-align: center;
 	line-height: 280%;
 	outline:none;
+	text-decoration: none;
 }
 
 #add{
@@ -177,6 +179,19 @@ input[type=submit]:hover {
 	outline:none;
 }
 
+#updateSettings{
+	position: absolute;
+	font-size: 30px;
+	font-weight: 700;
+	color: black;
+	height: 30%;
+	width: 30%;
+	left: 66%;
+	top: 66%;
+	border-radius: 15px;
+	outline:none;
+}
+
 #inputSubmit{
 	position: absolute;
 	height: 30%;
@@ -188,6 +203,6 @@ input[type=submit]:hover {
 	line-height: 150%;
 }
 
-#downTitles:hover{
+#downTitles>a:hover{
 	background-color: #7c25e5;
 }

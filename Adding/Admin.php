@@ -7,9 +7,10 @@
 
 <div id="background" unselectable="on"  onselectstart="return false;" 
  onmousedown="return false;"> </div>
-
-<a href="pasek.php"><div id="downTitles" unselectable="on"> Pasek wiadomosci </div></a>
-
+<div id="downTitles">
+<a href="info.php"><div unselectable="on"> Pasek ogloszen </div></a>
+<a style="top: 35%" href="schedule.php"><div unselectable="on"> Harmonogram wyswietlania </div></a>
+</div>
 <div id="time"> </div>
 
 <script type="text/javascript">
