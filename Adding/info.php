@@ -33,6 +33,8 @@
 Lista aktywnych ogloszen:
 <div id="list2">
 
+<div id="oglosz"> tak </div>
+
 
 </div>
 
