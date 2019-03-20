@@ -1,0 +1,1 @@
+[[10,"tak","nie"],[12,"tak","nie"],[14,"tak","nie"],[16,"ALA","nie"],[18,"video","https://www.youtube.com/watch?v=ntxkR3Wsops"],[20,"tak","nie"],[22,"tak","nie"],[24,"tak","nie"],[26,"tak","nie"],[28,"tak","nie"],[30,"tak","nie"],[32,"tak","nie"]]
