@@ -1,5 +1,4 @@
 <?php
-
     include "connect.php";
     $sql = "CREATE DATABASE ".$dbname." 
    DEFAULT CHARACTER SET utf8
@@ -25,6 +24,5 @@ sess varchar(255)
         echo "Error creating table: " . $conn->error;
         echo "<br>";
     }
-
 
 ?>

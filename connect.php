@@ -6,5 +6,4 @@ if (!$conn) {
     $conn =  mysqli_connect($servername, $username, $password);
 }
 $conn->set_charset("utf8");
-
 ?>

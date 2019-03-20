@@ -17,10 +17,10 @@ function send(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() { 
 			if(xhttp.readyState == 4 && xhttp.status == 200) { 
-				alert("Ogloszenia zostaly zauktualizowane!");
+			alert("Ogloszenia zostaly zauktualizowane! ");
 		}
     };
-	xhttp.open("POST", window.location.pathname.replace("/Adding", "").replace("pasek.php", "strona.php"), true);
+	xhttp.open("POST", window.location.pathname.replace("pasek.php", "checkPasek.php"), true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("sendMain=true");
 }

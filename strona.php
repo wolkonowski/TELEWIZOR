@@ -6,7 +6,6 @@
 </head>
 <body>
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="jQuery.js"></script>
 <script type='text/javascript'>
 
     (function()
@@ -36,26 +35,10 @@
 
 <div id="czas"> </div>
 
-<div id="foto"> 
-</div>
-<?php
-	$path = "foto";    
-	$d = dir($path);
-	$suma = 0;
-	while (false !== ($entry = $d->read())) {
-		$filepath = "{$path}/{$entry}";
-		if(is_file($filepath)) {
-			$suma++;
-			echo "<div id='foto$suma' style='position: absolute; top: -1000px;'>".$entry."</div>";	
-		}
-	}
-	echo "<div id='iloscfoto' style='position: absolute; top: -1000px;'>".$suma."</div>";
-?>
-
 <?php
 
-if(isset($_POST['sendMain'])){
-	header("Refresh:0");
+if(isset($POST['sendMain'])){
+
 }
 
 ?>
@@ -78,6 +61,22 @@ function zegar(){
 }
 zegar();
 start();
+
+window.setInterval(function(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+		if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			var x = this.responseText;
+			if(x == "YES") restart();
+			
+		}
+    };
+	xhttp.open("POST", "Adding/checkPasek.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("check=OK");
+	
+}, 2000);
+
 </script>
 
 </body>
