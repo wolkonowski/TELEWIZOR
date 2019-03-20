@@ -20,7 +20,7 @@ function send(){
 			alert("Ogloszenia zostaly zauktualizowane! ");
 		}
     };
-	xhttp.open("POST", window.location.pathname.replace("pasek.php", "checkPasek.php"), true);
+	xhttp.open("POST", window.location.pathname.replace("info.php", "checkPasek.php"), true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("sendMain=true");
 }
