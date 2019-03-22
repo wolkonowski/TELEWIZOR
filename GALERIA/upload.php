@@ -1,36 +1,43 @@
 <?php
-if (isset($_POST['submit']))
+if(!empty($_FILES['files']['name'][0]))
 {
-	$file = $_FILES['file'];
+	$files= $_FILES['files'];
 	
-	$fileName = $_FILES['file']['name'];
+	$uploaded = array();	
+	$filed = array();	
+	$allowed = array ('jpg', 'png', 'jpeg');
 	
-	$fileTmpName = $_FILES['file']['tmp_name'];
-	$fileSize = $_FILES['file']['size'];
-	$fileError = $_FILES['file']['error'];
-	$fileType = $_FILES['file']['type'];
-
-	$fileExt = explode('.', $fileName);
-	$fileActualExt = strtolower(end($fileExt));
-	
-	$allowed = array('jpg', 'jpeg', 'png');
-	
-    if (in_array($fileActualExt, $allowed))
-	{   if($fileError === 0)
-	{   if($fileSize < 1000000000000000)
-	{   $fileNameNew = uniqid('', true).".".
-           $fileActualExt;
-        $fileDestination = 'foto/'. $fileNameNew;
-		  move_uploaded_file($fileTmpName, $fileDestination);
-		header("Location: index.php?uploadsuccess");  
-	}else {echo "Plik jest za duzy";}
-	                        
-	}else{echo "Error";}   
+	foreach($files['name'] as $position => $file_name)
+	{
+		$file_tmp = $files['tmp_name'][$position];
+		$file_size = $files['size'][$position];
+		$file_error = $files['error'][$position];
 		
-	} else{echo "Plik ma złe rozszerzenie";}
-	
-	
-	
-	
+		$file_ext = explode('.', $file_name);
+		$file_ext = strtolower(end($file_ext));
+		
+		if(in_array($file_ext, $allowed))
+		{
+			if($file_error === 0)
+			{
+				if($file_size <= 30000000)
+				{
+					$file_name_new = uniqid('',true) . '.' . $file_ext;
+					$file_destination = 'foto/' . $file_name_new;
+					
+					if(move_uploaded_file($file_tmp, $file_destination))
+					{
+						$uploaded[$position] = $file_destination;
+					}	else {$failed[$position]="[{$file_name}] nie udało sie przeslac";}
+				} else {$filed[$position]= "[{$file_name}] jest za duzy";}
+				
+			}else {$filed[$position]= "[{$file_name}] nie udało sie przeslac";}
+		}else {$filed[$position]= "[{$file_name}] już istnieje";}
+		
+	}	
+	if(!empty($uploaded)){print_r($uploaded);}
+	if(!empty($filed)){print_r($filed);}
+
 }
+
 ?>
