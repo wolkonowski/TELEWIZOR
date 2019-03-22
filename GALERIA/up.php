@@ -5,7 +5,7 @@
 </head>
 <body>
    <form action="upload.php"   method="POST" enctype="multipart/form-data">
-      <input type="file" name="file">	
+      <input type="file" name="files[]" multiple>	
 	  <button inptype type="submit" name="submit"> Dodaj zdjęcie </button>
 	 </form>
 </body>
