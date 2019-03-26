@@ -20,7 +20,7 @@
 
 
 <div id="t0"> Podaj date: 
-<input type="date"/>
+<input type="date" id="t0-value"/>
 </div>
 
 <div id="content">Wpisz wartosc: <br/>
