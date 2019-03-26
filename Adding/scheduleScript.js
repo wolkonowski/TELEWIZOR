@@ -1,4 +1,25 @@
 
+
+function changeAdd(){
+	if(document.getElementById('typeAdd').value == "foto"){
+		
+	}
+	else if(document.getElementById('typeAdd').value == "wideo"){
+		
+	}
+	else {
+		
+	}
+}
+
+function send(){
+	
+}
+
+
+
+
+
 function zegar(){
     
     now = new Date();

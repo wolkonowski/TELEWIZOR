@@ -29,7 +29,7 @@ echo "t0={$c[0]}
 
     if($c[1]=='video')
     {
-
+		
         $c[2]=str_replace("watch?v=","embed/",$c[2]);
         echo 'content=<iframe width="560" height="315" src="'.$c[2].'?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"';
     }
