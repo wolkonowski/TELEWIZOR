@@ -17,7 +17,8 @@
   <option value="wideo">Wideo</option>
   <option value="tekst">Tekst</option>
 </select>
-
+<div id="back">
+</div>
 
 <div id="t0"> Podaj date: 
 <input type="date" id="t0-value"/>
