@@ -1,7 +1,23 @@
 <html>
 
 <head>
-
+<style>
+      
+		.zd{  
+		    width: 1070px;
+			height: 560px;
+            float: left;
+ 			margin: 10px;
+			background: #fff;
+			pading: 2px;
+			box_sizig: border_box;
+ 
+	      }
+		 .zd img{
+                 width: 100%;
+				 height: 100%;
+		       } 
+</style>
 </head>
 <body>
 
