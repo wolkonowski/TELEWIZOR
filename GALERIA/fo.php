@@ -15,8 +15,8 @@
 
 		     }
 		.zd{  
-		    width: 30%;
-			high: 30%;
+		    width: 300px;
+			height: 200px;
             float: left;
  			margin: 10px;
 			background: #fff;
@@ -26,7 +26,7 @@
 	      }
 		 .zd img{
                  width: 100%;
-				 high: 100%;
+				 height: 100%;
 		       } 
 </style>
 </head>
