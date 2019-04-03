@@ -12,9 +12,27 @@
 
 
 
+<select id="typeAdd" onchange="javascript:changeAdd()">
+  <option value="foto">Foto</option>
+  <option value="wideo">Wideo</option>
+  <option value="tekst">Tekst</option>
+</select>
+<div id="back">
+</div>
 
+<div id="t0"> Podaj date: 
+<input type="date" id="t0-value"/>
+</div>
 
+<div id="content">Wpisz wartosc: <br/>
+<form>
+	<textarea id="content-value"></textarea>
+</form>
+</div>
 
+<div id = "send"> 
+<input type="submit" value="Dodaj" onclick="javascript:send()" />
+</div>
 
 <div id="list">
 Aktualny harmonogram:
