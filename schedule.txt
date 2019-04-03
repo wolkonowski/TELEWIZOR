@@ -1,1 +1,1 @@
-[[10,"foto","nie"],[12,"text","nie"],[14,"tak","nie"],[16,"ALA","nie"],[18,"video","https://www.youtube.com/watch?v=ntxkR3Wsops"],[20,"tak","nie"],[22,"tak","nie"],[24,"tak","nie"],[26,"tak","nie"],[28,"tak","nie"],[30,"tak","nie"],[32,"tak","nie"]]
+[[0,10,"foto","nie"],[10,12,"text","nie"],[22,14,"tak","nie"],[36,16,"ALA","nie"],[52,18,"video","https://www.youtube.com/watch?v=ntxkR3Wsops"],[70,20,"tak","nie"],[90,22,"tak","nie"],[112,24,"tak","nie"],[136,26,"tak","nie"],[162,28,"tak","nie"],[190,30,"tak","nie"],[220,32,"tak","nie"]]
