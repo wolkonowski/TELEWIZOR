@@ -5,8 +5,8 @@ function checkStatus(){
 		xhttp.onreadystatechange = function() { 
 			if(xhttp.readyState == 4 && xhttp.status == 200) { 
 			var x =xhttp.responseText.split("<br>");
-			if(x[0].contains("typ: ")){
-				var str = x[0].replace("typ: ", '');
+			if(x[0].contains("t0: ")){
+				var str = x[0].replace("t0: ", '');
 				if(str == "brak"){
 					
 				}
