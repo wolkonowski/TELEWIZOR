@@ -41,10 +41,8 @@ Aktualny harmonogram:
 <div id="list2">
 
 <?php
-include '../inside.php';
 
-
-foreach($OBIEKT as list($type, $id, $url, $time)){
+foreach(json_decode(file_get_contents('../schedule.txt')) as list($type, $id, $url, $time)){
 	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . "</div>";
 }
 

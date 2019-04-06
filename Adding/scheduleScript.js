@@ -40,19 +40,22 @@ function send(){
 	document.getElementById('hour').style.border = '0px solid red';
 	document.getElementById('min').style.border = '0px solid red';
 	document.getElementById('sec').style.border = '0px solid red';
+	document.getElementById('content-value').style.border = '0px solid red';
 	if(document.getElementById("content-value").value.includes("&")){
 		window.alert("Wartosc nie moze zawierac znaku '&'!");
 		return;
 	}
+	
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() { 
 			if(xhttp.readyState == 4 && xhttp.status == 200) { 
 			if(document.getElementById("typeAdd").value == "foto") alert("Pomyslnie dodales zdjecie!");
 			else if(document.getElementById("typeAdd").value == "wideo") alert("Pomyslnie dodales film!");
 			else alert("Pomyslnie dodales tekst!");
+			location.reload();
 		}
     };
-	xhttp.open("POST", window.location.pathname.replace("Adding/schedule.php", "inside.php"), true);
+	xhttp.open("POST", '../inside.php', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("dt=" + (parseInt(document.getElementById("hour").value) * 3600 + parseInt(document.getElementById("min").value) * 60 + parseInt(document.getElementById("sec").value)) + "&typ=" + document.getElementById('typeAdd').value + "&content=" + document.getElementById("content-value").value);
 	
