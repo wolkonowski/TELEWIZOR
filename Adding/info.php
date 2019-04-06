@@ -7,6 +7,18 @@
 
 <div id="background"> 
 <div id="time"> </div>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+</style>
+
 
 
 
@@ -21,9 +33,11 @@
 
 <div id="lab">
     <label> Dodaj ogloszenie: </label>
-    <input type="text" id='value1' autocomplete="off" placeholder="Tutaj wpisz tekst...">
-  
-    <input type="submit" onclick="javascript:submit1()" value="OK">
+	<br>
+    <input type="text" id='value1' autocomplete="off" placeholder="Tutaj wpisz tekst..." style="margin-top: 3%">
+  <div id = "send"> 
+    <input type="submit" style="margin-left: 500%; margin-top: -200%" value="Dodaj" onclick="javascript:submit1()" />
+	</div>
 
 </div>
 <div id="red">Ogłoszenie nie może być puste! </div>
@@ -41,9 +55,9 @@ Lista aktywnych ogloszen:
 <div id="end"> __ </div>
 </div>
 
-<div id="add2">
-	<input type="submit" id="inputSubmit" onclick="javascript:send()" value="Zaktualizuj pasek ogloszen">
-</div>
+<div id = "send" style="left: 25%;"> 
+    <input type="submit" value="Zaktualizuj pasek ogloszen" onclick="javascript:send()" />
+	</div>
 
 </div>
 

@@ -4,6 +4,16 @@
 <link rel="stylesheet" href="styleAdmin.css"> 
 </head>
 <body>
+<style>
+#downTitles >a{
+	position: absolute;
+	font-size: 30px;
+	font-weight: 700;
+	color: white;
+	height: 10%;
+	width: 20%;
+}
+</style>
 
 <div id="background" unselectable="on"  onselectstart="return false;" 
  onmousedown="return false;"> </div>

@@ -7,21 +7,23 @@
 
 <div id="background"> 
 <div id="time"> </div>
-
+<div id="red">Ogłoszenie nie może być puste! </div>
 
 
 
 
 <select id="typeAdd" onchange="javascript:changeAdd()">
+  <option value="tekst">Tekst</option>
   <option value="foto">Foto</option>
   <option value="wideo">Wideo</option>
-  <option value="tekst">Tekst</option>
 </select>
 <div id="back">
 </div>
 
-<div id="t0"> Podaj date: 
-<input type="date" id="t0-value"/>
+<div id="t0"> Podaj czas trwania: <br>
+<input type="text" class='date' id='hour' autocomplete="off" value="00"> :
+<input type="text" class='date' id='min' autocomplete="off" value="00"> :
+<input type="text" class='date' id='sec' autocomplete="off" value="00"> 
 </div>
 
 <div id="content">Wpisz wartosc: <br/>
@@ -39,9 +41,10 @@ Aktualny harmonogram:
 <div id="list2">
 
 <?php
-include 'scheduleMySQL.php';
-$l = getList();
-foreach($l as list($type, $id, $url, $time)){
+include '../inside.php';
+
+
+foreach($OBIEKT as list($type, $id, $url, $time)){
 	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . "</div>";
 }
 
