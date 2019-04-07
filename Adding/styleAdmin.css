@@ -116,7 +116,7 @@ body {
 	color: black;
 	min-height: 50%;
 	text-align: center;
-	width: 40%;
+	width: 45%;
 	left: 50%;
 	top: 150px;
 	bottom: 50px;
@@ -134,7 +134,7 @@ body {
 	color: black;
 	min-height: 30px;
 	text-align: left;
-	width: 80%;
+	width: 75%;
 	left: 5%;
 	top: 10%;
 	word-wrap:break-word;
@@ -290,6 +290,32 @@ body {
   box-sizing: border-box;
 }
 
+#deleteObject{
+	position: absolute;
+	background-color: red;
+	top: 5%;
+	right: -8%;
+	width: 5%;
+	height: 90%;
+}
+
+#moveDown{
+	position: absolute;
+	background-color: white;
+	top: 5%;
+	right: -15%;
+	width: 5%;
+	height: 90%;
+}
+
+#moveUp{
+	position: absolute;
+	background-color: green;
+	top: 5%;
+	right: -22%;
+	width: 5%;
+	height: 90%;
+}
 
 
 

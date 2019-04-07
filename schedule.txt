@@ -1,1 +1,1 @@
-[[0,18,"tekst","abc"],[18,100,"video","https:\/\/www.youtube.com\/watch?v=x2y2V8LpbHk"],[118,1,"tekst","fsafsa"],[119,2,"tekst","fsafsa"],[121,14400,"tekst","fsafsa"],[14521,14400,"tekst","fsafsa"]]
+[[0,18,"tekst","abc"],[18,2,"tekst","a"],[20,6,"tekst","a"],[26,5,"tekst","a"],[31,4,"tekst","a"]]

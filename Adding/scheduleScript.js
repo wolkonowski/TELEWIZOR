@@ -12,6 +12,45 @@ function changeAdd(){
 	}
 }
 
+function removeObject(nr){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			alert("Pomyslnie usunales objekt!");
+			location.reload();
+		}
+    };
+	xhttp.open("POST", '../inside.php', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("delete=" + nr);
+}
+
+function moveDown(nr){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			alert("Pomyslnie przesunales objekt w dol!");
+			location.reload();
+		}
+    };
+	xhttp.open("POST", '../inside.php', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("movedown=" + nr);
+}
+
+function moveUp(nr){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			alert("Pomyslnie usunales objekt w gore!");
+			location.reload();
+		}
+    };
+	xhttp.open("POST", '../inside.php', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("moveup=" + nr);
+}
+
 function send(){
 	if(document.getElementById("content-value").value.replace(/ /g,'') == '' ){
 		document.getElementById("content-value").value = document.getElementById("content-value").value.replace(/ /g,'')
@@ -61,11 +100,7 @@ function send(){
 	
 }
 
-function emptyError(t){
-	if(t="h") document.getElementById('hour').style.border = '2px solid red';
-	if(t="m") document.getElementById('min').style.border = '2px solid red';
 
-}
 
 function replace2(str, c, repl){
 		alert(str);
