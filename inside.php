@@ -6,14 +6,16 @@ function swap(&$x, &$y) {
     $x=$y;
     $y=$tmp;
 }
-
+$filename="schedule.txt";
 $OBIEKT=array();
-$myfile = file_get_contents("schedule.txt");
-
+if(!file_exists("default.txt"))
+    file_put_contents("default.txt","schedule.txt");
+$filename = file_get_contents("default.txt");
+$myfile=file_get_contents($filename);
 $OBIEKT=json_decode($myfile);
 
 if(isset($_REQUEST['dt'])&&!empty($_REQUEST['dt'])) {
-    $myfile = fopen("schedule.txt", "w");
+    $myfile = fopen($filename, "w");
     if(empty($OBIEKT))$t0=0;
     else $t0=$OBIEKT[count($OBIEKT)-1][0]+$OBIEKT[count($OBIEKT)-1][1];
     $dane = array($t0,doubleval($_REQUEST['dt']),$_REQUEST['typ'],str_replace('\/','/',$_REQUEST['content']));
@@ -53,7 +55,7 @@ echo "t0={$c[0]}
 }
 if(isset($_REQUEST['reset'])&&!empty($_REQUEST['reset']))
 {
-    $myfile = fopen("schedule.txt", "w");
+    $myfile = fopen($filename, "w");
     fwrite($myfile,"");
     fclose($myfile);
 
@@ -65,14 +67,14 @@ if(isset($_REQUEST['getjson'])&&!empty($_REQUEST['getjson']))
 }
 if(isset($_REQUEST['setjson'])&&!empty($_REQUEST['setjson']))
 {
-    $myfile = fopen("schedule.txt", "w");
+    $myfile = fopen($filename, "w");
     fwrite($myfile,$_REQUEST['setjson']);
     fclose($myfile);
 
 }
 if(isset($_REQUEST['delete'])&&!empty($_REQUEST['delete']))
 {
-    $val=$_REQUEST['delete'];
+    $val=$_REQUEST['delete']-1;
     if($val>count($OBIEKT)-1) exit("ERROR MY FRIEND");
     else {
         $dt=$OBIEKT[$val][1];
@@ -87,7 +89,7 @@ if(isset($_REQUEST['delete'])&&!empty($_REQUEST['delete']))
 
     }
     $jsn = json_encode($OBIEKT);
-    $myfile = fopen("schedule.txt", "w");
+    $myfile = fopen($filename, "w");
     fwrite($myfile, $jsn);
     fclose($myfile);
 }
@@ -103,7 +105,7 @@ if(isset($_REQUEST['moveup'])&&!empty($_REQUEST['moveup']))
     }
 
     $jsn = json_encode($OBIEKT);
-    $myfile = fopen("schedule.txt", "w");
+    $myfile = fopen($filename, "w");
     fwrite($myfile, $jsn);
     fclose($myfile);
 }
@@ -121,7 +123,7 @@ if(isset($_REQUEST['movedown']))
     }
 
     $jsn = json_encode($OBIEKT);
-    $myfile = fopen("schedule.txt", "w");
+    $myfile = fopen($filename, "w");
     fwrite($myfile, $jsn);
     fclose($myfile);
 }

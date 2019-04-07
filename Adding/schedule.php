@@ -43,9 +43,9 @@ Aktualny harmonogram:
 <div id="list2">
 
 <?php
-$k = 1;
+$k = 0;
 foreach(json_decode(file_get_contents('../schedule.txt')) as list($type, $id, $url, $time)){
-	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . " <div id='deleteObject' onclick='javascript:removeObject(". $k . ")'> </div> <div id='moveDown' onclick='javascript:moveDown(". $k . ")'>D </div> <div id='moveUp' onclick='javascript:moveUp(". $k . ")'>U </div></div>";
+	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . " <div id='deleteObject' onclick='javascript:removeObject(". ++$k . ")'> </div> <div id='moveDown' onclick='javascript:moveDown(". $k . ")'>D </div> <div id='moveUp' onclick='javascript:moveUp(". $k . ")'>U </div></div>";
 	$k++;
 }
 
