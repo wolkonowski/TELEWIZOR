@@ -12,6 +12,10 @@ function changeAdd(){
 	}
 }
 
+function redirect(page){
+	window.location.href = page;
+}
+
 function removeObject(nr){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() { 

@@ -1,1 +1,1 @@
-[[0,18,"tekst","abc"],[18,2,"tekst","a"],[20,6,"tekst","a"],[26,5,"tekst","a"],[31,4,"tekst","a"]]
+[[0,18,"tekst","abc"],[18,2,"tekst","a"],[20,5,"tekst","a"],[25,4,"tekst","a"]]
