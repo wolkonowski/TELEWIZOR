@@ -9,7 +9,7 @@ function swap(&$x, &$y) {
 $filename="schedule.txt";
 $OBIEKT=array();
 if(!file_exists("default.txt"))
-    file_put_contents("default.txt","schedule.txt");
+    file_put_contents("default.txt","schedule_default.txt");
 $filename = file_get_contents("default.txt");
 $myfile=file_get_contents($filename);
 $OBIEKT=json_decode($myfile);
