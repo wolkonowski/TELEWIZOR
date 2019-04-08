@@ -6,11 +6,14 @@ function swap(&$x, &$y) {
     $x=$y;
     $y=$tmp;
 }
-$filename="schedule.txt";
 $OBIEKT=array();
-if(!file_exists("default.txt"))
-    file_put_contents("default.txt","schedule_default.txt");
-$filename = file_get_contents("default.txt");
+if(!file_exists("default_e.txt"))
+    file_put_contents("default_e.txt","schedule_default.txt");
+if(!file_exists("default_v.txt"))
+    file_put_contents("default_v.txt","schedule_default.txt");
+$filename = file_get_contents("default_e.txt");
+$filename_v = file_get_contents("default_v.txt");
+
 $myfile=file_get_contents($filename);
 $OBIEKT=json_decode($myfile);
 
@@ -27,31 +30,32 @@ if(isset($_REQUEST['dt'])&&!empty($_REQUEST['dt'])) {
 
 }
 $i=0;
-if(isset($_REQUEST['t'])&&!empty($_REQUEST['t'])&&!empty($OBIEKT)) {
-    $time = $_REQUEST['t'];
-    if($time>=($OBIEKT[count($OBIEKT)-1][0]+$OBIEKT[count($OBIEKT)-1][1])) {
-        $time-=($OBIEKT[count($OBIEKT)-1][0]+$OBIEKT[count($OBIEKT)-1][1]);
-    }
-    while ($i<count($OBIEKT)&&$OBIEKT[$i][0] <= $time) {
-        $i++;
-    }
-    $c = $OBIEKT[--$i];
+if(isset($_REQUEST['t'])&&!empty($_REQUEST['t'])) {
+    $myfile=file_get_contents($filename_v);
+    $OBIEKT=json_decode($myfile);
+    if(!empty($OBIEKT)) {
+        $time = $_REQUEST['t'];
+        if ($time >= ($OBIEKT[count($OBIEKT) - 1][0] + $OBIEKT[count($OBIEKT) - 1][1])) {
+            $time -= ($OBIEKT[count($OBIEKT) - 1][0] + $OBIEKT[count($OBIEKT) - 1][1]);
+        }
+        while ($i < count($OBIEKT) && $OBIEKT[$i][0] <= $time) {
+            $i++;
+        }
+        $c = $OBIEKT[--$i];
 
-echo "t0={$c[0]}
+        echo "t0={$c[0]}
 <br>typ={$c[2]}
 <br>";
 
-    if($c[2]=='video')
-    {
+        if ($c[2] == 'video') {
 
-        $c[3]=str_replace("watch?v=","embed/",$c[3]);
-        echo 'content=<iframe width="560" height="315" src="'.$c[3].'?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"';
+            $c[3] = str_replace("watch?v=", "embed/", $c[3]);
+            echo 'content=<iframe width="560" height="315" src="' . $c[3] . '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"';
+        }
+        if ($c[2] == 'foto' || $c[2] == 'text') {
+            echo "content={$c[3]}";
+        }
     }
-    if($c[2]=='foto'||$c[2]=='text')
-    {
-        echo "content={$c[3]}";
-    }
-
 }
 if(isset($_REQUEST['reset'])&&!empty($_REQUEST['reset']))
 {

@@ -12,7 +12,17 @@
 <div id = "changeScheduler"> 
 <input type="submit" value="Moje harmonogramy" onclick="javascript:redirect('SchedulerList.php')"/>
 </div>
+    <div id="edit">Currently edited
+        <?php
+        echo file_get_contents("../default_e.txt")
+        ?>
+    </div>
 
+    <div id="view">Currently displayed
+        <?php
+        echo file_get_contents("../default_v.txt")
+        ?>
+    </div>
 
 <select id="typeAdd" onchange="javascript:changeAdd()">
   <option value="tekst">Tekst</option>
@@ -44,7 +54,7 @@ Aktualny harmonogram:
 
 <?php
 $k = 0;
-$filename=file_get_contents("../default.txt");
+$filename=file_get_contents("../default_e.txt");
 foreach(json_decode(file_get_contents('../'.$filename)) as list($type, $id, $url, $time)){
 	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . " <div id='deleteObject' onclick='javascript:removeObject(". ++$k . ")'> </div> <div id='moveDown' onclick='javascript:moveDown(". $k . ")'>D </div> <div id='moveUp' onclick='javascript:moveUp(". $k . ")'>U </div></div>";
 	$k++;
@@ -53,6 +63,7 @@ foreach(json_decode(file_get_contents('../'.$filename)) as list($type, $id, $url
 ?>
 
 </div>
+
 
 <div id="end"> __ </div>
 </div>

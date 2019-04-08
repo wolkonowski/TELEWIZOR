@@ -40,10 +40,18 @@ if(isset($_REQUEST['add'])&&!empty($_REQUEST['add']))
             file_put_contents("../$name",'[]');
         }
 }
-if(isset($_REQUEST['select'])&&!empty($_REQUEST['select']))
+if(isset($_REQUEST['select_e'])&&!empty($_REQUEST['select_e']))
 {
-    $myfile = fopen("../default.txt", "w");
-    $val=$_REQUEST['select']-1;
+    $myfile = fopen("../default_e.txt", "w");
+    $val=$_REQUEST['select_e']-1;
+    fwrite($myfile, $OBIEKT[$val]);
+    fclose($myfile);
+    header('Location: schedule.php');
+}
+if(isset($_REQUEST['select_v'])&&!empty($_REQUEST['select_v']))
+{
+    $myfile = fopen("../default_v.txt", "w");
+    $val=$_REQUEST['select_v']-1;
     fwrite($myfile, $OBIEKT[$val]);
     fclose($myfile);
     header('Location: schedule.php');
@@ -63,6 +71,19 @@ if(isset($_REQUEST['select'])&&!empty($_REQUEST['select']))
 <div id="background"> 
 <div id="time"> </div>
 <div id="red">Ogłoszenie nie może być puste! </div>
+<div id="edit">Currently edited
+    <?php
+    echo file_get_contents("../default_e.txt")
+    ?>
+</div>
+
+    <div id="view">Currently displayed
+        <?php
+        echo file_get_contents("../default_v.txt")
+        ?>
+    </div>
+
+
 
     <form action="" method="post">
         Wpisz nazwę harmonogramu:
@@ -75,8 +96,12 @@ if(isset($_REQUEST['select'])&&!empty($_REQUEST['select']))
 $k = 1;
 foreach(json_decode(file_get_contents('lists.txt')) as $a){
 	echo "<form action=\"\" method=\"post\">
-    $a : select<input type=\"submit\" name=\"select\" value=".$k.">
-</form><form action=\"\" method=\"post\">
+    $a : select to edit<input type=\"submit\" name=\"select_e\" value=".$k.">
+</form>
+<form action=\"\" method=\"post\">
+    $a : select to view<input type=\"submit\" name=\"select_v\" value=".$k.">
+</form>
+<form action=\"\" method=\"post\">
     $a : delete<input type=\"submit\" name=\"delete\" value=".$k.">
 </form>";
 	$k++;
