@@ -56,7 +56,7 @@ Aktualny harmonogram:
 $k = 0;
 $filename=file_get_contents("../default_e.txt");
 foreach(json_decode(file_get_contents('../'.$filename)) as list($type, $id, $url, $time)){
-	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . " <div id='deleteObject' onclick='javascript:removeObject(". ++$k . ")'> </div> <div id='moveDown' onclick='javascript:moveDown(". $k . ")'>D </div> <div id='moveUp' onclick='javascript:moveUp(". $k . ")'>U </div></div>";
+	echo "<div>" . $type . "  " . $id . "  " . $url . "  " . $time . " <div id='deleteObject' onclick='javascript:removeObject(". ($k+1) . ")'> </div> <div id='moveDown' onclick='javascript:moveDown(". $k . ")'>D </div> <div id='moveUp' onclick='javascript:moveUp(". $k . ")'>U </div></div>";
 	$k++;
 }
 
