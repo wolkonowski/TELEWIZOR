@@ -56,6 +56,10 @@ if(isset($_REQUEST['select_v'])&&!empty($_REQUEST['select_v']))
     fclose($myfile);
     header('Location: schedule.php');
 }
+if(isset($_REQUEST['set'])&&!empty($_REQUEST['set']))
+{
+    file_put_contents("../default_v.txt",file_get_contents("../default_e.txt"));
+}
 ?>
 
 

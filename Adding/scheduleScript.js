@@ -63,7 +63,7 @@ function upl(){
 			location.reload();
 		}
     };
-	xhttp.open("POST", '../inside.php', true);
+	xhttp.open("POST", 'SchedulerList.php', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("set=2");
 }
