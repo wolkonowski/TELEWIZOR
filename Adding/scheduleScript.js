@@ -55,6 +55,19 @@ function moveUp(nr){
 	xhttp.send("moveup=" + nr);
 }
 
+function upl(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+			if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			alert("Pomyslnie ustawilem harmonogram jako aktywny!");
+			location.reload();
+		}
+    };
+	xhttp.open("POST", '../inside.php', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("set=2");
+}
+
 function send(){
 	if(document.getElementById("content-value").value.replace(/ /g,'') == '' ){
 		document.getElementById("content-value").value = document.getElementById("content-value").value.replace(/ /g,'')

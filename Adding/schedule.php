@@ -70,7 +70,7 @@ foreach(json_decode(file_get_contents('../'.$filename)) as list($type, $id, $url
 
 
 <div id="updateSettings">
-	<input type="submit" id="inputSubmit" onclick="javascript:send()" value="Zaktualizuj harmonogram">
+	<input type="submit" id="inputSubmit" onclick="javascript:upl()" value="Ustaw harmonogram jako aktywny">
 </div>
 
 <script type="text/javascript" src="scheduleScript.js"></script>
