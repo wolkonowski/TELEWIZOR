@@ -1,1 +1,1 @@
-[[0,100,"tekst","1000"],[100,123123,"wideo","121"]]
+[[0,3600,"foto","FOTO"],[3600,100,"tekst","1000"],[3700,7200,"wideo","https:\/\/www.youtube.com\/watch?v=SWrEUtLLRkc"]]
