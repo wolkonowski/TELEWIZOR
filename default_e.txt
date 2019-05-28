@@ -1,1 +1,1 @@
-schedule_NOWY.txt
+schedule_default.txt
