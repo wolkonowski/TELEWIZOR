@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="stylle.css"> 
 </head>
 <body>
 <script type="text/javascript" src="script.js"></script>
@@ -23,11 +23,7 @@
     })();
 
 </script>
-<div id="obwodka"> </div>
-
-<div id="tlo1"> </div>
-
-<div id="tlo2"> </div>
+<div id="centrum"> </div>
 
 <div id="pasek"> </div>
 
@@ -55,7 +51,7 @@ function zegar(){
     if (min < 10) min = "0" + min;
     if (sec < 10) sec = "0" + sec;
     
-    document.getElementById('czas').innerHTML = hours + ":" + min + ":" + sec;
+    document.getElementById('czas').innerHTML = hours + ":" + min ;
         
     setTimeout("zegar()", 1000);
 }
