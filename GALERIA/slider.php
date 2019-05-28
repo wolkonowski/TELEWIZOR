@@ -13,7 +13,7 @@
 			
 			?>
 			<div class=zd>
-			   <img src="<?php echo $value;?>" alt="<?php echo $value; ?>">
+			     <img src="<?php echo $value;?>" alt="<?php echo $value; ?>"height="100%"; width="100%";>
 			</div>
 		
 		<?php
