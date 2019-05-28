@@ -15,8 +15,8 @@
 
 		     }
 		.zd{  
-		    width: 30%;
-			high: 30%;
+		    width: 300px;
+			high: 300px;
             float: left;
  			margin: 10px;
 			background: #fff;
@@ -39,9 +39,10 @@
 			
 			?>
 			<div class=zd>
-			   <img src="<?php echo $value;?>" alt="<?php echo $value; ?>">
+			   <img src="<?php echo $value;?>" alt="" height="300px"; width="250px"; <?php echo    $value;  ?>" >
+			   <?php echo    $value;?>
 			</div>
-		
+		  
 		<?php
 		}
 	
