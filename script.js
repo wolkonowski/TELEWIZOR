@@ -32,6 +32,8 @@ function start(){
 function restart(){
 	clearInterval(id2);
 	clearInterval(id);
+	document.getElementById("pasek1").style.left = "100%";
+	document.getElementById("pasek2").style.left = "100%";
 	start();
 }
 
