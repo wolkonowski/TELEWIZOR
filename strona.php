@@ -71,17 +71,7 @@ window.setInterval(function(){
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("check=OK");
 	
-	var xhttp2 = new XMLHttpRequest();
-	xhttp2.onreadystatechange = function() { 
-		if(xhttp2.readyState == 4 && xhttp2.status == 200) { 
-			var x = this.responseText;
-			if(x == "YES") location.reload();
-			
-		}
-    };
-	xhttp2.open("POST", "Adding/checkPasek.php", true);
-	xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp2.send("check2=OK");
+
 	
 }, 2000);
 
@@ -130,11 +120,11 @@ function check(item, index){
 			change = true;
 		}
 	}
-	else if(item.includes("content=")){
+	/*else if(item.includes("content=")){
 		if(!(document.getElementById("centrum").innerHTML===item.replace("content=",''))){
 			change = true;
 		}
-	}
+	}*/
 }
 
 
