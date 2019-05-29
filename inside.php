@@ -49,11 +49,11 @@ if(isset($_REQUEST['t'])&&!empty($_REQUEST['t'])) {
         if ($c[2] == 'wideo') {
 
             $c[3] = str_replace("watch?v=", "embed/", $c[3]);
-            echo 'content=<iframe width="560" height="315" src="' . $c[3] . '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            echo 'content=<iframe width="100%" height="100%" src="' . $c[3] . '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
         }
         if ($c[2] == 'foto') {
             $name= "?name=$c[3]";
-            echo 'content=<iframe width="560" height="315" src="GALERIA/slider.php'.$name.'"></iframe>';
+            echo 'content=<iframe width="100%" height="100%" src="GALERIA/slider.php'.$name.'"></iframe>';
         }
         if ($c[2] == 'text')
         {

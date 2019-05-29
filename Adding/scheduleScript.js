@@ -59,13 +59,16 @@ function upl(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() { 
 			if(xhttp.readyState == 4 && xhttp.status == 200) { 
-			alert("Pomyslnie ustawilem harmonogram jako aktywny!");
+			alert("Pomyslnie ustawiles harmonogram jako aktywny!");
 			location.reload();
+
 		}
     };
 	xhttp.open("POST", 'SchedulerList.php', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("set=2");
+	
+
 }
 
 function send(){

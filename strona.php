@@ -71,7 +71,91 @@ window.setInterval(function(){
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("check=OK");
 	
+
+	
 }, 2000);
+
+var czas = 10;
+
+var licznik = 0;
+
+var actt0, acttyp;
+start2();
+
+var change = false;
+
+function start2(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+		if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			var x = this.responseText;
+			x.split("<br>").forEach(function(item,index) {
+				if(item.includes("t0=")){
+					actt0 = item.replace('t0=','');
+				}
+				else if(item.includes("typ=")){
+					acttyp = item.replace('typ=','');
+				}
+				else if(item.includes("content=")){
+					document.getElementById("centrum").innerHTML = item.replace('content=','');
+				}
+			});
+			
+			
+		}
+    };
+	xhttp.open("POST", "inside.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("t=" + czas);
+}
+
+function check(item, index){
+	if(item.includes("t0=")){
+		if(!(actt0===item.replace("t0=",''))){
+			change = true;
+		}
+	}
+	else if(item.includes("typ=")){
+		if(!(acttyp===item.replace("typ=",''))){
+			change = true;
+		}
+	}
+	/*else if(item.includes("content=")){
+		if(!(document.getElementById("centrum").innerHTML===item.replace("content=",''))){
+			change = true;
+		}
+	}*/
+}
+
+
+window.setInterval(function(){
+	licznik = licznik+czas;
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+		if(xhttp.readyState == 4 && xhttp.status == 200) { 
+			var x = this.responseText;
+			x.split("<br>").forEach(check);
+			if(change == true){
+				change = false;
+				x.split("<br>").forEach(function(item, index){
+				if(item.includes("t0=")){
+					actt0 = item.replace("t0=",'');
+				}
+				else if(item.includes("typ=")){
+					acttyp = item.replace("typ=",'');
+				}
+				else if(item.includes("content=")){
+					document.getElementById("centrum").innerHTML = item.replace("content=",'');
+				}
+				});
+			}
+		}
+    };
+	xhttp.open("POST", "inside.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("t=" + licznik);
+	
+}, czas * 1000);
 
 </script>
 
