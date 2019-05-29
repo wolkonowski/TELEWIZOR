@@ -59,13 +59,24 @@ function upl(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() { 
 			if(xhttp.readyState == 4 && xhttp.status == 200) { 
-			alert("Pomyslnie ustawilem harmonogram jako aktywny!");
+			alert("Pomyslnie ustawiles harmonogram jako aktywny!");
 			location.reload();
+
 		}
     };
 	xhttp.open("POST", 'SchedulerList.php', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("set=2");
+	
+	var xhttp2 = new XMLHttpRequest();
+	xhttp2.onreadystatechange = function() { 
+		if(xhttp2.readyState == 4 && xhttp2.status == 200) { 
+			alert("Ogloszenia zostaly zauktualizowane! ");
+		}
+	};
+	xhttp2.open("POST", window.location.pathname.replace("info.php", "checkPasek.php"), true);
+	xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp2.send("sendMain2=true");
 }
 
 function send(){

@@ -25,7 +25,7 @@
     </div>
 
 <select id="typeAdd" onchange="javascript:changeAdd()">
-  <option value="tekst">Tekst</option>
+  <option value="text">Tekst</option>
   <option value="foto">Foto</option>
   <option value="wideo">Wideo</option>
 </select>
