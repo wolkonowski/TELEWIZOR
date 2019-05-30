@@ -7,7 +7,8 @@
 
 <main>
 	    <?php
-		$a=glob('foto/{*.jpg, *.jpeg, *.png}', GLOB_BRACE);
+$name=$_REQUEST['name'];
+		$a=glob($name.'/{*.jpg, *.jpeg, *.png}', GLOB_BRACE);
 		
 		foreach ($a as $value){
 			
@@ -32,7 +33,7 @@
 		  liczba++;
 		  if (liczba > x.length){liczba=1}
 		  x[liczba - 1].style.display = "block";
-		  setTimeout(animacja, 2000);
+		  setTimeout(animacja, 7000);
 		}		
 		
 </script>

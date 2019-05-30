@@ -34,7 +34,7 @@ if(isset($_REQUEST['t'])&&!empty($_REQUEST['t'])) {
     $OBIEKT=json_decode($myfile);
     if(!empty($OBIEKT)) {
         $time = $_REQUEST['t'];
-        if ($time >= ($OBIEKT[count($OBIEKT) - 1][0] + $OBIEKT[count($OBIEKT) - 1][1])) {
+        while ($time >= ($OBIEKT[count($OBIEKT) - 1][0] + $OBIEKT[count($OBIEKT) - 1][1])) {
             $time -= ($OBIEKT[count($OBIEKT) - 1][0] + $OBIEKT[count($OBIEKT) - 1][1]);
         }
         while ($i < count($OBIEKT) && $OBIEKT[$i][0] <= $time) {
