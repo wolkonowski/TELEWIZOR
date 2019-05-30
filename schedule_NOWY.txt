@@ -1,1 +1,1 @@
-[[0,30,"foto","abc.jpg"],[30,60,"wideo","https:\/\/www.youtube.com\/watch?v=XoL3625Jdig"]]
+[[0,60,"foto","plan"],[60,300,"foto","foto"],[360,193,"wideo","https:\/\/www.youtube.com\/watch?v=XoL3625Jdig"]]
